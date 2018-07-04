@@ -66,7 +66,13 @@
                             <outlet property="delegate" destination="u2p-Xo-LIX" id="msW-Ug-yhm"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Notes" id="94X-6d-u4M"/>
+                    <navigationItem key="navigationItem" title="Notes" id="94X-6d-u4M">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cF1-9f-fig">
+                            <connections>
+                                <segue destination="WuT-f8-Zva" kind="show" identifier="addNote" id="hfR-Gc-fiK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXi-TP-ue3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,7 +96,7 @@
             </objects>
             <point key="canvasLocation" x="562.39999999999998" y="266.71664167916043"/>
         </scene>
-        <!--Display Note View Controller-->
+        <!--Title-->
         <scene sceneID="A6W-ei-Znr">
             <objects>
                 <viewController id="WuT-f8-Zva" customClass="DisplayNoteViewController" customModule="MakeSchoolNotes" customModuleProvider="target" sceneMemberID="viewController">
@@ -124,10 +130,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tDP-nA-cwF"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="4Li-pe-TiP">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nVU-KF-h0t"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Tt5-q8-0EU"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Bh-C3-FQ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2416.8000000000002" y="266.71664167916043"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hfR-Gc-fiK"/>
+    </inferredMetricsTieBreakers>
 </document>
