@@ -57,6 +57,7 @@
                                 <connections>
                                     <outlet property="noteModificationTimeLabel" destination="TkZ-F7-78t" id="9e1-v5-URJ"/>
                                     <outlet property="noteTitleLabel" destination="xWz-g1-krG" id="0JQ-p8-9wS"/>
+                                    <segue destination="WuT-f8-Zva" kind="show" identifier="displayNote" id="MuZ-0G-5ur"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -98,13 +99,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="32A-Qf-GTC">
-                                <rect key="frame" x="15" y="30" width="345" height="30"/>
+                                <rect key="frame" x="15" y="74" width="345" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RkF-at-Uf0">
-                                <rect key="frame" x="15" y="70" width="345" height="582"/>
+                                <rect key="frame" x="15" y="114" width="345" height="538"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
