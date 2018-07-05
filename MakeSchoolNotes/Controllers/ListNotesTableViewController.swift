@@ -10,19 +10,25 @@ import UIKit
 
 class ListNotesTableViewController: UITableViewController {
     
+    var notes = [Note]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // 1
-        return 10
+        return notes.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // 2
         let cell = tableView.dequeueReusableCell(withIdentifier: "listNotesTableViewCell", for: indexPath) as! ListNotesTableViewCell
-        cell.noteTitleLabel.text = "note's title"
-        cell.noteModificationTimeLabel.text = "note's modification time"
+        let note = notes[indexPath.row]
+        
+        cell.noteTitleLabel.text = note.title
+        cell.noteModificationTimeLabel.text = note.modificationTime?.convertToString() ?? "unknown"
         
         return cell
     }
@@ -34,7 +40,11 @@ class ListNotesTableViewController: UITableViewController {
         // 2
         switch identifier {
         case "displayNote":
-            print("note cell tapped")
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            
+            let note = notes[indexPath.row]
+            let destination = segue.destination as! DisplayNoteViewController
+            destination.note = note
             
         case "addNote":
             print("create note bar button item tapped")
@@ -44,6 +54,11 @@ class ListNotesTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            notes.remove(at: indexPath.row)
+        }
+    }
     @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
         
     }
