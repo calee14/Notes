@@ -30,20 +30,37 @@
                                             <rect key="frame" x="15" y="0.0" width="345" height="59.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWz-g1-krG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="345" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" red="0.32549019607843138" green="0.6588235294117647" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="345" height="41.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Modified Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TkZ-F7-78t">
-                                                    <rect key="frame" x="0.0" y="30" width="345" height="29.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njd-Up-pj9">
+                                                    <rect key="frame" x="0.0" y="41.5" width="345" height="18"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Modified Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TkZ-F7-78t">
+                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="18"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="70" id="Aqu-kq-o8f"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeZ-Vh-Hpt">
+                                                            <rect key="frame" x="70" y="0.0" width="275" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="TkZ-F7-78t" firstAttribute="height" secondItem="xWz-g1-krG" secondAttribute="height" id="Rn5-hI-NVJ"/>
+                                                <constraint firstItem="njd-Up-pj9" firstAttribute="leading" secondItem="J2O-Zo-mBO" secondAttribute="leading" id="2AU-Bd-HVw"/>
+                                                <constraint firstAttribute="bottom" secondItem="njd-Up-pj9" secondAttribute="bottom" id="hOl-PP-tMF"/>
+                                                <constraint firstAttribute="trailing" secondItem="njd-Up-pj9" secondAttribute="trailing" id="t4F-q4-bGS"/>
+                                                <constraint firstItem="njd-Up-pj9" firstAttribute="top" secondItem="xWz-g1-krG" secondAttribute="bottom" id="yPN-l5-taw"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
@@ -68,6 +85,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Notes" id="94X-6d-u4M">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cF1-9f-fig">
+                            <color key="tintColor" red="1" green="0.82064344618055562" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="WuT-f8-Zva" kind="show" identifier="addNote" id="hfR-Gc-fiK"/>
                             </connections>
@@ -104,7 +122,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="32A-Qf-GTC">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="32A-Qf-GTC">
                                 <rect key="frame" x="15" y="74" width="345" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -132,11 +150,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="4Li-pe-TiP">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nVU-KF-h0t">
+                            <color key="tintColor" red="1" green="0.82064344619999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="1nJ-w1-dbz" kind="unwind" identifier="cancel" unwindAction="unwindWithSegue:" id="8nB-JW-bms"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Tt5-q8-0EU">
+                            <color key="tintColor" red="1" green="0.82064344619999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="1nJ-w1-dbz" kind="unwind" identifier="save" unwindAction="unwindWithSegue:" id="RSk-yO-eZM"/>
                             </connections>

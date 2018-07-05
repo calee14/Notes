@@ -45,7 +45,8 @@ struct CoreDataHelper {
     static func retrieveNotes() -> [Note] {
         // create a NSFetchRequest to retrieve all Person objects
         let fetchRequest = NSFetchRequest<Note>(entityName: "Note")
-        
+        let sort = NSSortDescriptor(key: #keyPath(Note.modificationTime), ascending: false)
+        fetchRequest.sortDescriptors = [sort]
         // use the NSManagedObjectContext to execute the NSFetchRequest
         do {
             let results = try context.fetch(fetchRequest)
