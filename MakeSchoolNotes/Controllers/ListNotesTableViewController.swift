@@ -34,6 +34,11 @@ class ListNotesTableViewController: UITableViewController {
         dateFormatter.timeStyle = .none
         let new_date = dateFormatter.string(from: Date(timeIntervalSinceReferenceDate: (note.modificationTime?.timeIntervalSinceReferenceDate)!)) 
         cell.noteModificationTimeLabel.text = new_date
+        if let prefix = note.content?.prefix(50) {
+            cell.notePreviewLabel.text = String(prefix)
+        } else {
+            cell.notePreviewLabel.text = ""
+        }
         
         return cell
     }

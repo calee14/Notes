@@ -73,6 +73,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="noteModificationTimeLabel" destination="TkZ-F7-78t" id="9e1-v5-URJ"/>
+                                    <outlet property="notePreviewLabel" destination="zeZ-Vh-Hpt" id="iaK-6o-xVa"/>
                                     <outlet property="noteTitleLabel" destination="xWz-g1-krG" id="0JQ-p8-9wS"/>
                                     <segue destination="WuT-f8-Zva" kind="show" identifier="displayNote" id="MuZ-0G-5ur"/>
                                 </connections>
